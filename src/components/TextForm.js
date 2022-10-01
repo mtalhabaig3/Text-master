@@ -38,6 +38,9 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-1" onClick={handleClear}>
           Clear
         </button>
+        {/* <button className="btn btn-primary mx-1" onClick={handleRemoveExSpace}>
+          Removes Ex Spaces
+        </button> */}
       </div>
       <div className="container my-3">
         <h1>your text summary</h1>
