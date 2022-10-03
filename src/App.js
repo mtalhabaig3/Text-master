@@ -26,7 +26,7 @@ function App() {
       msg: message,
       type: type,
     });
-    setTimeout(() => setAlert("null"), 1500);
+    setTimeout(() => setAlert(null), 1500);
   };
   return (
     <>
