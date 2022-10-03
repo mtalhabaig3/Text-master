@@ -3,24 +3,29 @@ import React, { useState } from "react";
 export default function TextForm(props) {
   const handleUpperCase = () => {
     setText(text.toUpperCase());
+    props.showAlert("Converted to uppercase", "success ");
   };
   const handleCopy = () => {
     var text = document.getElementById("floatingTextarea");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Coppied to clipboard", "success ");
   };
   const handleLowerCase = () => {
     setText(text.toLowerCase());
+    props.showAlert("Converted to lowercase", "success ");
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
   const handleClear = (event) => {
+    props.showAlert("Cleared text", "success ");
     setText("");
   };
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra Spaces", "success ");
   };
 
   const [text, setText] = useState("");
