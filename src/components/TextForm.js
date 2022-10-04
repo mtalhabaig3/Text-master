@@ -6,9 +6,14 @@ export default function TextForm(props) {
     props.showAlert("Converted to uppercase", "success ");
   };
   const handleCopy = () => {
-    var text = document.getElementById("floatingTextarea");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        alert("successfully copied");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
     props.showAlert("Coppied to clipboard", "success ");
   };
   const handleLowerCase = () => {
@@ -100,7 +105,7 @@ export default function TextForm(props) {
         <h1>your text summary</h1>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
