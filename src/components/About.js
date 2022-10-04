@@ -121,15 +121,6 @@ export default function About(props) {
           </div>
         </div>
       </div>
-      <div className="container">
-        <button
-          onClick={toggleStyle}
-          type="button"
-          className="btn btn-primary my-3"
-        >
-          {btnText}
-        </button>
-      </div>
     </div>
   );
 }
